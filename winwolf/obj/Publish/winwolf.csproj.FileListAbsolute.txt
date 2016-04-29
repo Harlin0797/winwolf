@@ -5,3 +5,4 @@ F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Publish\Reso
 F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Publish\winwolf.exe.manifest
 F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Publish\winwolf.application
 F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Publish\winwolf.exe
+F:\GitHub\winwolf\winwolf\obj\Publish\winwolf.exe
