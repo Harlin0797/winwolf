@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mimes>
+  <value>.html;text/html</value>
+  <value>.htm;text/htm</value>
+  <value>.bmp;image/bmp</value>
+  <value>.jpg;image/jpeg</value>
+  <value>.png;image/png</value>
+  <value>.css;text/css</value>
+  <value>.js;text/javascript</value>
+</Mimes>

@@ -1,0 +1,9 @@
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Debug\ResolveAssemblyReference.cache
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\bin\Debug\winwolf.exe
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\bin\Debug\winwolf.pdb
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Debug\winwolf.exe
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Debug\winwolf.pdb
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\bin\Debug\winwolf.exe.manifest
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\bin\Debug\winwolf.application
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Debug\winwolf.exe.manifest
+F:\学习\C#\网络编程\自定义Web服务器\winwolf\winwolf\obj\Debug\winwolf.application

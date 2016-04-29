@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="resources/css/common.css" />
+<link rel="stylesheet" href="resources/css/styleRegister.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/jquery.Jcrop.min.css" media="all">
+<link rel="stylesheet" type="text/css" href="resources/js/uploadify-v3.1/uploadify.css" media="all">
+<script type="text/javascript" src="resources/js/validdata.js"></script>
+<script type="text/javascript" src="resources/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="resources/js/uploadify-v3.1/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.Jcrop.min.js"></script>
+<script type="text/javascript" src="resources/js/ThinkBox/jquery.ThinkBox.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/js/ThinkBox/css/ThinkBox.css" media="all">
+
+<title>代取员注册</title>
+</head>
+
+<body>
+	<div id="banner">
+	  <img src="resources/images/logoXiaoGe.png"/>
+      <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">关于我们</a></li>
+          <li><a href="#">软件下载</a></li>
+          <li><a href="#">注册快递小哥</a></li>
+          <li><a href="#">联系我们</a></li>
+      </ul>
+	</div>
+    <!-- =======================分割线========================== -->
+    <div id="split-top"></div>
+	<!-- =======================注册信息========================== -->
+	<div id="regist">
+		<div id="regist_explain" class="commanDiv">
+			<H1>注册快递小哥</H1>
+			<P>注册前请仔细阅读  <a href="#">快递小哥服务条款</a></P>
+			<P>注册成为快递小哥所有选项均为必填项，注册成功后我们会尽快为您审核，注册信息必须为真实有效信息，否则将被退回！</P>
+		</div>
+    
+		<div id="regist_info" class="commanDiv">
+			<form class="update-pic cf" onsubmit="return validate_form(this)" name="registfrom" action="./reg_receiveReg.action" method="post">
+				<ul>
+				  <li>
+						<!--  <input type="hidden" name="head" value="0"></input>-->
+						<span>手机号：</span>
+						<input type="text" name="phone" style="width:160px"/>
+					    <input name="button" type="button" disabled="disabled" class="imgBack" id="btnVerify" value="获取验证码"/>
+				  </li>
+					<li>
+						<span>验证码：</span>
+						<input type="text" name="vertify" style="width:140px"/>
+						<span style="width:auto;color:#F00">*填写短信验证码</span>					</li>
+					<li>
+						<span>密码：</span>
+						<input type="password" name="pwd"/>
+					</li>
+					<li>
+						<span>确认密码：</span>
+						<input type="password" name="pwdOK"/>
+					</li>
+					<li>
+						<span>学校：</span>
+						<input type="text" name="school" value="天津城建大学" readonly="readonly"/>
+					</li>
+					<li>
+						<span>院系：</span>
+						<input type="text" name="faculty"/>
+					</li>
+					<li>
+						<span>专业：</span>
+						<input type="text" name="major"/>
+					</li>
+					<li>
+						<span>班级：</span>
+						<input type="text" name="classString"/>
+					</li>
+					<li>
+						<span>真实姓名：</span>
+						<input type="text" name="name"/>
+					</li>
+					<li>
+						<span>身份证号：</span>
+						<input type="text" name="sfzID"/>
+					</li>
+					<li>
+						<span style="vertical-align:top;margin-top:3px;float:left">头像：</span>
+						<div class="main" style="float:left">
+							<div class="upload-area">
+								<input type="file" id="user-pic">
+								<div class="file-tips">支持JPG,PNG，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
+								<div class="preview hidden" id="preview-hidden"></div>
+							</div>
+							<div class="preview-area">
+								<input type="hidden" id="x" name="x" />
+								<input type="hidden" id="y" name="y" />
+								<input type="hidden" id="w" name="w" />
+								<input type="hidden" id="h" name="h" />
+								<input type="hidden" id='img_src' name='src'/>
+								<input type="hidden" id='picName' name='picName'/>
+								<div class="tcrop">头像预览</div>
+								<div class="crop crop100"><img id="crop-preview-100" src="" alt=""></div>
+								<div class="crop crop60"><img id="crop-preview-60" src="" alt=""></div>
+								<a class="uppic-btn reupload-img" href="javascript:$('#user-pic').uploadify('cancel','*');">重新上传</a>							</div>
+						</div>
+					</li>
+					<li>
+						<span style="vertical-align:top;margin-top:20px;float:left">身份证正面照：</span>
+						<div class="main" style="float:left;margin-top:20px;">
+							<div class="upload-area-sfz">
+								<input type="file" id="sfz-pic">
+								<div class="file-tips">支持JPG,PNG格式,保持图片清晰可见，身份证的真实有效是您注册成功的关键！</div>
+								<div class="preview hidden" id="preview-hidden_sfz"></div>
+							</div>
+							<div class="preview-area">
+								<input type="hidden" id="x2" name="x2" />
+								<input type="hidden" id="y2" name="y2" />
+								<input type="hidden" id="w2" name="w2" />
+								<input type="hidden" id="h2" name="h2" />
+								<input type="hidden" id='img_src_sfz' name='src'/>
+								<input type="hidden" id='picName_sfz' name='picName'/>
+								<div class="tcrop">身份证预览</div>
+								<div class="crop-sfz crop100"><img id="crop-preview-100-sfz" src="" alt=""></div>
+								<div class="crop-sfz crop60"><img id="crop-preview-60-sfz" src="" alt=""></div>
+								<a class="uppic-btn reupload-img_sfz" href="javascript:$('#user-pic').uploadify('cancel','*');">重新上传</a>							</div>
+						</div>
+					</li>
+					<li>
+						<input style="margin-top:40px; width:30px; margin-left:130px;" checked="checked" type="checkbox" name="sfzID"/>
+						<span style="width:500px; text-align:left; margin-top:36px; margin-left:-10px; letter-spacing:2px; color:#686868;">我已认真阅读 <a href="#" style="text-decoration:none;">快递小哥服务条款</a> 并同意本条款</span>					</li>
+					<li>
+						<input style="margin-left:140px; margin-top:20px; width:244px; height:57px; font-family:'微软雅黑'; font-size:24px; color:#505050; background-color:#ffffff;" type="submit" value="注册成为快递小哥"/> 
+						<input type="hidden" id='ImgHeadID' name='ImgHeadID'/>
+						<input type="hidden" id='ImgSFZID' name='ImgSFZID'/>            
+					</li>
+				</ul> 
+			</form>
+		</div>
+	</div>
+	<!-- =======================页尾分割线========================== -->
+	<div id="split-foot"></div>
+	<!-- =======================页尾========================== -->
+	<div id="foot">
+		<div class="foot-content">
+			<ul class="foot-ul">
+				<li class="foot-li">
+					友情链接
+					<ul class="foot-ul-li-ul">
+						<a href="http://www.syxysoft.com" target="_blank"><li>天津盛扬信远科技有限公司</li></a>
+						<a href="http://www.tjuci.edu.cn/" target="_blank"><li>天津城建大学</li></a>
+					</ul>
+				</li>
+				<li class="foot-li">
+					联系我们
+					<ul class="foot-ul-li-ul">
+						<li>联系邮箱：syxy@syxysoft.com</li>
+						<li>联系电话：022-58018980</li>
+					</ul>
+				</li>
+				<li class="foot-li">
+					其他
+					<ul class="foot-ul-li-ul">
+						<a href="agreement.html" target="_blank"><li>快递小哥服务协议</li></a>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="copyright">
+			<p class="copyright">Copyright©2014 SYXYSOFT.COM All Rights Reserved  <span class="copyright-span">快递小哥</span><p>
+		</div>
+	</div>
+
+<script type="text/javascript">
+$(function(){
+	//上传头像(uploadify插件)
+	$("#user-pic").uploadify({
+		'queueSizeLimit' : 1,
+		'removeTimeout' : 0.5,
+		'preventCaching' : true,
+		'multi'    		: false,
+		'swf' 			: 'resources/js/uploadify-v3.1/uploadify.swf',
+		'uploader' 		: './ImgUpload',
+		'buttonText' 	: '<i class="userup-icon"></i>上传头像',
+		'width' 		: '200',
+		'height' 		: '200',
+		'fileObjName'   : 'ImgHead',
+		'formData'      : {'ImgID': productIdFromTime(), 'Type': 'ImgHead'},
+		'fileTypeExts'	: '*.jpg; *.png;',
+		'onUploadSuccess' : function(file, data, response){
+			var data = $.parseJSON(data);
+			if(data['status'] == 0){
+				$.ThinkBox.error(data['info'],{'delayClose':3000});
+				return;
+			}
+			$('head').val(data['status']);
+			var preview = $('.upload-area').children('#preview-hidden');
+			preview.show().removeClass('hidden');
+			//两个预览窗口赋值
+			$('.crop').children('img').attr('src',data['url']+'?random='+Math.random());
+			//隐藏表单赋值
+			$('#img_src').val(data['url']);
+			$('#picName').val(data['picName']);	
+			$('#ImgHeadID').val(data['imgId']);
+			//绑定需要裁剪的图片
+			var img = $('<img />');
+			preview.append(img);
+			preview.children('img').attr('src',data['url']+'?random='+Math.random());
+			var crop_img = preview.children('img');
+			crop_img.attr('id',"cropbox").show();
+			var img = new Image();
+			img.src = data['url']+'?random='+Math.random();
+			//根据图片大小在画布里居中
+			img.onload = function(){
+				var img_height = 0;
+				var img_width = 0;
+				var real_height = img.height;
+				var real_width = img.width;
+				if(real_height > real_width && real_height > 200){
+					var persent = real_height / 200;
+					real_height = 200;
+					real_width = real_width / persent;
+				}else if(real_width > real_height && real_width > 200){
+					var persent = real_width / 200;
+					real_width = 200;
+					real_height = real_height / persent;
+				}
+				if(real_height < 200){
+					img_height = (200 - real_height)/2;	
+				}
+				if(real_width < 200){
+					img_width = (200 - real_width)/2;
+				}
+				preview.css({width:(200-img_width)+'px',height:(200-img_height)+'px'});
+				preview.css({paddingTop:img_height+'px',paddingLeft:img_width+'px'});			
+			}
+			//裁剪插件
+			$('#cropbox').Jcrop({
+	            bgColor:'#333',   //选区背景色
+	            bgFade:true,      //选区背景渐显
+	            fadeTime:1000,    //背景渐显时间
+	            allowSelect:false, //是否可以选区，
+	            allowResize:true, //是否可以调整选区大小
+	            aspectRatio: 1,     //约束比例
+	            minSize : [100,100],//可选最小大小
+	            boxWidth : 200,		//画布宽度
+	            boxHeight : 200,	//画布高度
+	            onChange: showPreview,//改变时重置预览图
+	            onSelect: showPreview,//选择时重置预览图
+	            setSelect:[ 0, 0, 100, 100],//初始化时位置
+	            onSelect: function (c){	//选择时动态赋值，该值是最终传给程序的参数！
+		            $('#x').val(c.x);//需裁剪的左上角X轴坐标
+		            $('#y').val(c.y);//需裁剪的左上角Y轴坐标
+		            $('#w').val(c.w);//需裁剪的宽度
+		            $('#h').val(c.h);//需裁剪的高度
+	          }
+	        });
+			//提交裁剪好的图片
+			$('.save-pic').click(function(){
+				if($('#preview-hidden').html() == ''){
+					$.ThinkBox.error('请先上传图片！');
+				}else{
+					//由于GD库裁剪gif图片很慢，所以长时间显示弹出框
+					$.ThinkBox.success('图片处理中，请稍候……',{'delayClose':30000});
+					$('#pic').submit();
+				}
+			});
+			//重新上传,清空裁剪参数
+			var i = 0;
+			$('.reupload-img').click(function(){
+				$('#preview-hidden').find('*').remove();
+				$('#preview-hidden').hide().addClass('hidden').css({'padding-top':0,'padding-left':0});
+			});
+	     }
+	});
+	//预览图
+	function showPreview(coords){
+		var img_width = $('#cropbox').width();
+		var img_height = $('#cropbox').height();
+		  //根据包裹的容器宽高,设置被除数
+		  var rx = 100 / coords.w;
+		  var ry = 100 / coords.h; 
+		  $('#crop-preview-100').css({
+		    width: Math.round(rx * img_width) + 'px',
+		    height: Math.round(ry * img_height) + 'px',
+		    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+		    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+		  });
+		  rx = 60 / coords.w;
+		  ry = 60 / coords.h;
+		  $('#crop-preview-60').css({
+		    width: Math.round(rx * img_width) + 'px',
+		    height: Math.round(ry * img_height) + 'px',
+		    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+		    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+		  });
+	}
+})
+
+$(function(){
+	//上传头像(uploadify插件)
+	$("#sfz-pic").uploadify({
+		'queueSizeLimit' : 1,
+		'removeTimeout' : 0.5,
+		'preventCaching' : true,
+		'multi'   		 : false,
+		'swf' 			: 'resources/js/uploadify-v3.1/uploadify.swf',
+		'uploader' 		: './ImgUpload',
+		'buttonText' 	: '<i class="userup-icon"></i>上传身份证',
+		'width' 		: '200',
+		'height' 		: '200',
+		'fileObjName'   : 'ImgSFZ',
+		'formData'      : {'ImgID': productIdFromTime(), 'Type': 'ImgSFZ'},
+			'fileTypeExts'	: '*.jpg; *.png;',
+		'onUploadSuccess' : function(file, data, response){
+			var data = $.parseJSON(data);
+			if(data['status'] == 0){
+				$.ThinkBox.error(data['info'],{'delayClose':3000});
+				return;
+			}
+			var preview = $('.upload-area-sfz').children('#preview-hidden_sfz');
+			preview.show().removeClass('hidden');
+			//两个预览窗口赋值
+			$('.crop-sfz').children('img').attr('src',data['url']+'?random='+Math.random());
+			//隐藏表单赋值
+			$('#img_src_sfz').val(data['url']);
+			$('#picName_sfz').val(data['picName']);	
+			$('#ImgSFZID').val(data['imgId']);
+			//绑定需要裁剪的图片
+			var img = $('<img />');
+			preview.append(img);
+			preview.children('img').attr('src',data['url']+'?random='+Math.random());
+			var crop_img = preview.children('img');
+			crop_img.attr('id',"cropbox-sfz").show();
+			var img = new Image();
+			img.src = data['url']+'?random='+Math.random();
+			//根据图片大小在画布里居中
+			img.onload = function(){
+				var img_height = 0;
+				var img_width = 0;
+				var real_height = img.height;
+				var real_width = img.width;
+				if(real_height > real_width && real_height > 200){
+					var persent = real_height / 200;
+					real_height = 200;
+					real_width = real_width / persent;
+				}else if(real_width > real_height && real_width > 200){
+					var persent = real_width / 200;
+					real_width = 200;
+					real_height = real_height / persent;
+				}
+				if(real_height < 200){
+					img_height = (200 - real_height)/2;	
+				}
+				if(real_width < 200){
+					img_width = (200 - real_width)/2;
+				}
+				preview.css({width:(200-img_width)+'px',height:(200-img_height)+'px'});
+				preview.css({paddingTop:img_height+'px',paddingLeft:img_width+'px'});			
+			}
+			//裁剪插件
+			$('#cropbox-sfz').Jcrop({
+	            bgColor:'#333',   //选区背景色
+	            bgFade:true,      //选区背景渐显
+	            fadeTime:1000,    //背景渐显时间
+	            allowSelect:false, //是否可以选区，
+	            allowResize:true, //是否可以调整选区大小
+	            aspectRatio: 1,     //约束比例
+	            minSize : [100,100],//可选最小大小
+	            boxWidth : 200,		//画布宽度
+	            boxHeight : 200,	//画布高度
+	            onChange: showPreview,//改变时重置预览图
+	            onSelect: showPreview,//选择时重置预览图
+	            setSelect:[ 0, 0, 100, 100],//初始化时位置
+	            onSelect: function (c){	//选择时动态赋值，该值是最终传给程序的参数！
+		            $('#x2').val(c.x);//需裁剪的左上角X轴坐标
+		            $('#y2').val(c.y);//需裁剪的左上角Y轴坐标
+		            $('#w2').val(c.w);//需裁剪的宽度
+		            $('#h2').val(c.h);//需裁剪的高度
+	          }
+	        });
+			//提交裁剪好的图片
+			$('.save-pic-sfz').click(function(){
+				if($('#preview-hidden_sfz').html() == ''){
+					$.ThinkBox.error('请先上传图片！');
+				}else{
+					//由于GD库裁剪gif图片很慢，所以长时间显示弹出框
+					$.ThinkBox.success('图片处理中，请稍候……',{'delayClose':30000});
+					$('#pic').submit();
+				}
+			});
+			//重新上传,清空裁剪参数
+			var i = 0;
+			$('.reupload-img_sfz').click(function(){
+				$('#preview-hidden_sfz').find('*').remove();
+				$('#preview-hidden_sfz').hide().addClass('hidden').css({'padding-top':0,'padding-left':0});
+			});
+	     }
+	});
+	//预览图
+	function showPreview(coords){
+		var img_width = $('#cropbox-sfz').width();
+		var img_height = $('#cropbox-sfz').height();
+		  //根据包裹的容器宽高,设置被除数
+		  var rx = 100 / coords.w;
+		  var ry = 100 / coords.h; 
+		  $('#crop-preview-100-sfz').css({
+		    width: Math.round(rx * img_width) + 'px',
+		    height: Math.round(ry * img_height) + 'px',
+		    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+		    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+		  });
+		  rx = 60 / coords.w;
+		  ry = 60 / coords.h;
+		  $('#crop-preview-60-sfz').css({
+		    width: Math.round(rx * img_width) + 'px',
+		    height: Math.round(ry * img_height) + 'px',
+		    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+		    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+		  });
+	}
+})
+	function productIdFromTime(){
+		var timestamp = Date.parse(new Date());
+		var Num=""; 
+		for(var i=0;i<6;i++) 
+		{ 
+		Num+=Math.floor(Math.random()*10); 
+		} 
+	    var Id = timestamp + Num;
+	    return Id;
+	}
+	
+	function validate_required(field,alerttxt)
+	{
+	with (field)
+	  {
+	  if (value==null||value=="")
+	    {alert(alerttxt);return false}
+	  else {return true}
+	  }
+	}
+
+	function validate_form(thisform)
+	{
+	with (thisform)
+	  {
+	  if (validate_required(phone,"电话号码不能为空!")==false){
+		  phone.focus();
+		  return false
+	  }else if(validate_required(vertify,"验证码不能为空!")==false){
+		  vertify.focus();
+		  return false
+	  }else if(validate_required(pwd,"密码不能为空!")==false){
+		  pwd.focus();
+		  return false
+	  }else if(validate_required(pwdOK,"请确认密码!")==false){
+		  pwdOK.focus();
+		  return false
+	  }else if(validate_required(school,"学校不能为空!")==false){
+		  school.focus();
+		  return false
+	  }else if(validate_required(faculty,"院系不能为空!")==false){
+		  faculty.focus();
+		  return false
+	  }else if(validate_required(major,"专业不能为空!")==false){
+		  major.focus();
+		  return false
+	  }else if(validate_required(classString,"班级不能为空!")==false){
+		  classString.focus();
+		  return false
+	  }else if(validate_required(name,"姓名不能为空!")==false){
+		  name.focus();
+		  return false
+	  }else if(validate_required(sfzID,"身份证号不能为空!")==false){
+		  sfzID.focus();
+		  return false
+	  }
+	  }
+	}
+	
+</script>
+
+</body>
+</html>

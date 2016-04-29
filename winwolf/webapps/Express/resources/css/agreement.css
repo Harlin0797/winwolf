@@ -1,0 +1,22 @@
+#split-top{
+	height:1px;
+	border-top:1px solid #bfbfbf;
+}
+#agreement{
+	margin:0 auto;
+	width:960px;
+	text-align:left;
+	
+	font-size:14px;
+	line-height:17pt;
+}
+#agreement h1{
+	text-align:center;
+	padding-top:10px;
+}
+
+#agreement p{
+	font-size:14px;
+	line-height:17pt;
+	letter-spacing:2px;
+}
