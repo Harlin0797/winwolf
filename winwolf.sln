@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winwolf", "winwolf\winwolf.csproj", "{52ED6CBD-4CDA-4789-B33E-CCE830314E99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testPic", "testPic\testPic.csproj", "{3F835CA0-0B19-4A4B-AFF9-85FD4EC7BDFD}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WinWolfSetup", "WinWolfSetup\WinWolfSetup.vdproj", "{6C9FC03A-D8DB-42F3-A900-D43B0474F2FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Publish|Any CPU = Publish|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52ED6CBD-4CDA-4789-B33E-CCE830314E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52ED6CBD-4CDA-4789-B33E-CCE830314E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52ED6CBD-4CDA-4789-B33E-CCE830314E99}.Publish|Any CPU.ActiveCfg = Publish|Any CPU
+		{52ED6CBD-4CDA-4789-B33E-CCE830314E99}.Publish|Any CPU.Build.0 = Publish|Any CPU
+		{52ED6CBD-4CDA-4789-B33E-CCE830314E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52ED6CBD-4CDA-4789-B33E-CCE830314E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F835CA0-0B19-4A4B-AFF9-85FD4EC7BDFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F835CA0-0B19-4A4B-AFF9-85FD4EC7BDFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F835CA0-0B19-4A4B-AFF9-85FD4EC7BDFD}.Publish|Any CPU.ActiveCfg = Publish|Any CPU
+		{3F835CA0-0B19-4A4B-AFF9-85FD4EC7BDFD}.Publish|Any CPU.Build.0 = Publish|Any CPU
+		{3F835CA0-0B19-4A4B-AFF9-85FD4EC7BDFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F835CA0-0B19-4A4B-AFF9-85FD4EC7BDFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C9FC03A-D8DB-42F3-A900-D43B0474F2FA}.Debug|Any CPU.ActiveCfg = Debug
+		{6C9FC03A-D8DB-42F3-A900-D43B0474F2FA}.Publish|Any CPU.ActiveCfg = Publish
+		{6C9FC03A-D8DB-42F3-A900-D43B0474F2FA}.Publish|Any CPU.Build.0 = Publish
+		{6C9FC03A-D8DB-42F3-A900-D43B0474F2FA}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
